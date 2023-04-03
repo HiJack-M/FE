@@ -32,24 +32,24 @@ module.exports = {
         test: /\.tsx?$/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               presets: [
                 [
-                  "@babel/preset-env", // 预制配置
+                  '@babel/preset-env', // 预制配置
                   {
                     corejs: {
                       version: 3,
                     },
-                    useBuiltIns: "usage", // 按需引入 pollyfill
+                    useBuiltIns: 'usage', // 按需引入 pollyfill
                   },
                 ],
-                "@babel/preset-react", // React 环境
+                '@babel/preset-react', // React 环境
               ],
-              plugins: ["@babel/plugin-transform-runtime"],
+              plugins: ['@babel/plugin-transform-runtime'],
             },
           },
-          "ts-loader",
+          'ts-loader',
         ],
         exclude: /node_modules/,
       },
@@ -89,34 +89,3 @@ module.exports = {
     }),
   ],
 }
-
-...
-rules: [
-  {
-    test: /\.tsx?$/,
-    use: [
-      {
-        loader: "babel-loader",
-        options: {
-          presets: [
-            [
-              "@babel/preset-env", // 预制配置
-              {
-                corejs: {
-                  version: 3,
-                },
-                useBuiltIns: "usage", // 按需引入 pollyfill
-              },
-            ],
-            "@babel/preset-react", // React 环境
-          ],
-          plugins: ["@babel/plugin-transform-runtime"],
-        },
-      },
-      "ts-loader",
-    ],
-    exclude: /node_modules/,
-  },
-  ...
- ],
- ...
